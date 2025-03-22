@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // I don't know how this works, bless chatGPT
     function loadInstagramEmbed(url, msg) {
+        guessForm.style.display = "none";
         const container = document.getElementById("video-container");
         container.innerHTML = `
         <strong><p>${msg}</p></strong>
@@ -75,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startRound(url, msg) {
-        guessForm.style.display = "none";
         let userInput = guessForm.querySelector('#trick-input');
         userInput.value = "";
         videoContainer.innerHTML = "";
@@ -117,7 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Guessing form behavior
     const inputElement = document.getElementById('trick-input');
     const feedbackElement = document.getElementById('feedback');
-
+    const nextButton = document.getElementById('next-round');
+    
    
 
     guessForm.addEventListener('submit', (e) => {
@@ -128,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
             feedbackElement.style.color = 'green';
             videoContainer.style.display = 'block';
             loadInstagramEmbed(currentTrick.url,'🏆 Good job, see the full clip!');
+            nextButton.style.display = 'block';
         } else {
             feedbackElement.innerHTML = '<br>Your guess: ' + userGuess + ' is ❌ Wrong!';
             feedbackElement.style.color = 'red';
@@ -136,4 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    nextButton.addEventListener('click', () => {
+        location.reload();
+    });
 });

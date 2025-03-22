@@ -47,10 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentTrick = getRandomTrick();
 
     // I don't know how this works, bless chatGPT
-    function loadInstagramEmbed(url) {
+    function loadInstagramEmbed(url, msg) {
         const container = document.getElementById("video-container");
         container.innerHTML = `
-        <strong><p>🎥 Doubleclick the video to start!</p></strong>
+        <strong><p>${msg}</p></strong>
         <blockquote class="instagram-media"
             data-instgrm-permalink="${url}"
             data-instgrm-version="14"
@@ -64,17 +64,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Play button behavior
     const videoContainer = document.getElementById('video-container');
     const showButton = document.getElementById('show-video');
+    const guessForm = document.getElementById('guess-form');
 
     function hideVideoAfterDelay(delay) {
         setTimeout(() => {
             videoContainer.style.display = 'none';
+            guessForm.style.display = "block";
         }, delay);
     }
 
-    showButton.addEventListener('click', () => {
+    function startRound(url, msg) {
+        guessForm.style.display = "none";
+        let userInput = guessForm.querySelector('#trick-input');
+        userInput.value = "";
+        videoContainer.innerHTML = "";
         videoContainer.style.display = 'block'; 
         showButton.style.display = 'none';
-        loadInstagramEmbed(currentTrick.url);
+        loadInstagramEmbed(url,msg);
         // Hiding video after delay
         const interval = setInterval(() => {
             const iframe = videoContainer.querySelector('iframe');
@@ -99,12 +105,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     videoContainer.removeChild(overlay); // Remove the overlay after click
                 });
             }
-        }, 100); // Check every 100ms until iframe is found
+        }, 100);
+    }
+
+    showButton.addEventListener('click', () => {
+        startRound(currentTrick.url, '🎥 Doubleclick the video to start!');
     });
 
 
     // Guessing form behavior
-    const guessForm = document.getElementById('guess-form');
     const inputElement = document.getElementById('trick-input');
     const feedbackElement = document.getElementById('feedback');
 
@@ -117,22 +126,12 @@ document.addEventListener('DOMContentLoaded', () => {
             feedbackElement.innerHTML = '<br>Your guess: ' + userGuess + ' is ✅ Correct!';
             feedbackElement.style.color = 'green';
             videoContainer.style.display = 'block';
-            const container = document.getElementById("video-container");
-            container.innerHTML = `
-            <strong><p>🏆 Good job, see the full clip!</p></strong>
-            <blockquote class="instagram-media"
-                data-instgrm-permalink="${currentTrick.url}"
-                data-instgrm-version="14"
-                style="background:#FFF; border:0; margin: 1px; max-width:540px; width:100%;">
-            </blockquote>`;
-            if (window.instgrm && window.instgrm.Embeds && typeof window.instgrm.Embeds.process === 'function') {
-                window.instgrm.Embeds.process();
-            }
-
+            loadInstagramEmbed(currentTrick.url,'🏆 Good job, see the full clip!');
         } else {
             feedbackElement.innerHTML = '<br>Your guess: ' + userGuess + ' is ❌ Wrong!';
             feedbackElement.style.color = 'red';
-
+            videoContainer.style.display = 'block';
+            startRound(currentTrick.url, '🎥 So close, doubleclick the video to try again!');
         }
     });
 

@@ -24,12 +24,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const guesses = [
         new Guess('Kong precision', ['vault']),
         new Guess('Dive roll', ['roll']),
-        new Guess('Double frontflip', ['flip', 'double'])
+        new Guess('Double frontflip', ['flip', 'double']),
+        new Guess('Sideflip', []),
+        new Guess('Running gainer', []),
+        new Guess('Kong gainer', []),
+        new Guess('Running precise 360', []),
+
     ];
 
     const videos = [
         new Trick('https://www.instagram.com/p/CeteK9xoLuX/', 3000, 'Kong precision', ['vault']),
         new Trick('https://www.instagram.com/reel/DGAxZuCpAuX/', 1800, 'Dive roll', ['roll']),
+        new Trick('https://www.instagram.com/reel/C5I8N9YNJms/', 2800, 'Double frontflip', []),
+        new Trick('https://www.instagram.com/reel/DCpFvd9Nygp/', 1900, 'Sideflip', []),
+        new Trick('https://www.instagram.com/reel/DAgReI6NIm_/', 2300, 'Running gainer', []),
+        new Trick('https://www.instagram.com/reel/DHeHtcltpZC/', 2600, 'Kong gainer', []),
+        new Trick('https://www.instagram.com/p/CFC84DKn-cd/', 6000, 'Running precise 360', []),
+        
+        
     ];
 
     // Filling <datalist>

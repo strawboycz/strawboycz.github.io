@@ -1,0 +1,93 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header Styling */
+h1 {
+    color: #2c3e50;
+    margin-top: 20px;
+    font-size: 3em;
+}
+
+/* Video Styling */
+video {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border: 5px solid #2c3e50;
+    border-radius: 8px;
+}
+
+/* Form Styling */
+form {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: white;
+    display: inline-block;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 500px;
+}
+
+/* General Styling for inputs */
+input[type="text"], input[type="submit"] {
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 50px; /* Set the height to make inputs the same size */
+}
+
+input[type="submit"] {
+    background-color: #2c3e50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #34495e;
+}
+
+/* Styling for the input in datalist */
+input[list="trick-list"] {
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 80%;
+    margin-bottom: 10px;
+    height: 50px; /* Set the height to make inputs the same size */
+}
+
+/* Feedback Styling */
+#feedback {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    form {
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    input[type="text"], input[type="submit"] {
+        width: 100%;
+    }
+}

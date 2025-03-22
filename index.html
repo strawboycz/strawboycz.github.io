@@ -1,32 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <script src="script.js" defer></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parkourdle</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parkourdle</title>
+  <link rel="stylesheet" href="style.css">
+  <script async src="https://www.instagram.com/embed.js"></script>
+  <script src="script.js" defer></script>
 </head>
-
 <body>
-    <h1>Parkourdle</h1>
+  <h1>Parkourdle</h1>
 
-    <!-- <video id="trick-video" width="1920" height="1080" controls></video> -->
-    <div id="video-container" style="display: none;">
-        <iframe id="trick-iframe" width="100%" height="500" frameborder="0" src="https://www.instagram.com/p/CeteK9xoLuX/" allowfullscreen></iframe>
-    </div>
+  <!-- Kontejner pro dynamicky načtené Instagram video -->
+  <div id="video-container" style="display: none;"></div>
       
-    <button id="show-video">Spustit video</button>
+  <button id="show-video">Spustit video</button>
 
-    <form id="guess-form" action="#" method="get">
-        <input id="trick-input" list="trick-list" placeholder="Take a guess!" autocomplete="off">
-        <datalist id="trick-list"></datalist>
-        <input type="submit" value="Guess">
-    </form>
+  <form id="guess-form" action="#" method="get">
+    <input id="trick-input" list="trick-list" placeholder="Take a guess!" autocomplete="off">
+    <datalist id="trick-list"></datalist>
+    <input type="submit" value="Guess">
+  </form>
 
-    <p id="feedback"></p>
-
+  <p id="feedback"></p>
 </body>
-
 </html>

@@ -71,6 +71,15 @@ document.addEventListener('DOMContentLoaded', () => {
         loadInstagramEmbed(currentTrick.url);
     });
 
+    const iframe = videoContainer.querySelector('iframe');
+    
+    if (iframe) {
+        iframe.addEventListener('click', () => {
+            console.log('Kliknuto na Instagram video.');
+            hideVideoAfterDelay(currentTrick.delay); // Skrytí videa po kliknutí
+        });
+    }
+
     // Obsluha formuláře pro odhad triku
     const guessForm = document.getElementById('guess-form');
     const inputElement = document.getElementById('trick-input');

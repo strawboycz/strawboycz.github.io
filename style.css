@@ -5,6 +5,11 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
+    height: 100vh; /* Full height for vertical centering */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers content */
+    align-items: center; /* Horizontally centers content */
 }
 
 /* Header Styling */
@@ -15,12 +20,15 @@ h1 {
 }
 
 /* Video Styling */
-video {
+#video-container {
     max-width: 100%;
     height: auto;
     margin-top: 20px;
     border: 5px solid #2c3e50;
     border-radius: 8px;
+    display: flex; /* Ensures the video container is centered */
+    justify-content: center; /* Centers content inside the video container */
+    align-items: center; /* Centers content inside the video container */
 }
 
 /* Form Styling */
@@ -36,24 +44,32 @@ form {
 }
 
 /* General Styling for inputs */
-input[type="text"], input[type="submit"] {
+input[type="text"], input[type="submit"], #show-video {
     padding: 10px;
     font-size: 1.2em;
     border-radius: 5px;
     border: 1px solid #ccc;
-    width: 100%;
+    width: 100%;  /* Set the button width to 100% of the form's width */
     margin-bottom: 10px;
     height: 50px; /* Set the height to make inputs the same size */
 }
 
-input[type="submit"] {
+/* Show Video Button */
+#show-video {
+    width: auto; /* Prevent it from stretching across the full width */
+    max-width: 300px; /* Limit the button width */
+    margin-bottom: 20px; /* Add some space between buttons */
+}
+
+/* Submit Button and Show Video Button Styling */
+input[type="submit"], #show-video {
     background-color: #2c3e50;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover, #show-video:hover {
     background-color: #34495e;
 }
 
@@ -87,7 +103,7 @@ input[list="trick-list"] {
         margin-top: 20px;
     }
 
-    input[type="text"], input[type="submit"] {
+    input[type="text"], input[type="submit"], #show-video {
         width: 100%;
     }
 }

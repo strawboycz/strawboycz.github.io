@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function hideVideoAfterDelay(delay) {
         setTimeout(() => {
             videoContainer.style.display = 'none';
+            videoContainer.innerHTML = "";
             guessForm.style.display = "block";
         }, delay);
     }
@@ -87,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (iframe) {
                 iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
                 clearInterval(interval); // Stop checking
-    
+
                 // Create the overlay and append it to the container
                 const overlay = document.createElement('div');
                 overlay.style.position = 'absolute';

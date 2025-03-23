@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 overlay.style.left = '0';
                 overlay.style.width = '100%';
                 overlay.style.height = '75%';
-                overlay.style.backgroundColor = 'rgba(0, 0, 0, 255)';
+                overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
                 overlay.style.cursor = 'pointer';
                 videoContainer.style.position = 'relative';
                 videoContainer.appendChild(overlay);

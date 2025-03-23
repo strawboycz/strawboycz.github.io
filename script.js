@@ -123,11 +123,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Create the overlay and append it to the container
                 const overlay = document.createElement('div');
                 overlay.style.position = 'absolute';
-                overlay.style.top = '0';
+                overlay.style.top = '15%';
                 overlay.style.left = '0';
                 overlay.style.width = '100%';
-                overlay.style.height = '100%';
-                overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+                overlay.style.height = '75%';
+                overlay.style.backgroundColor = 'rgba(0, 0, 0, 255)';
                 overlay.style.cursor = 'pointer';
                 videoContainer.style.position = 'relative';
                 videoContainer.appendChild(overlay);

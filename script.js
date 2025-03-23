@@ -28,7 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
         new Guess('Sideflip', []),
         new Guess('Running gainer', []),
         new Guess('Kong gainer', []),
-        new Guess('Running precise 360', []),
+        new Guess('Running precision 360', []),
+        new Guess('Running precision', []),
+        new Guess('Dive kong', []),
+        new Guess('Reverse precision', []),
+        new Guess('Dash precision', []),
+        new Guess('Double kong', []),
+        new Guess('Dive frontflip', []),
 
     ];
 
@@ -39,13 +45,26 @@ document.addEventListener('DOMContentLoaded', () => {
         new Trick('https://www.instagram.com/reel/DCpFvd9Nygp/', 1900, 'Sideflip', []),
         new Trick('https://www.instagram.com/reel/DAgReI6NIm_/', 2300, 'Running gainer', []),
         new Trick('https://www.instagram.com/reel/DHeHtcltpZC/', 2600, 'Kong gainer', []),
-        new Trick('https://www.instagram.com/p/CFC84DKn-cd/', 6000, 'Running precise 360', []),
-        
+        new Trick('https://www.instagram.com/p/CFC84DKn-cd/', 6000, 'Running precision 360', []),
+        new Trick('https://www.instagram.com/reel/C_Dw_jgMh9W/', 2100, 'Sideflip', []),
+        new Trick('https://www.instagram.com/reel/DF5iCTEstm-/', 3000, 'Running precision', []),
+        new Trick('https://www.instagram.com/reel/DCE6d0-NuTQ/', 1300, 'Running precision 360', []),
+        new Trick('https://www.instagram.com/reel/C5LXS66t_Pq/', 5600, 'Dive kong', []),
+        new Trick('https://www.instagram.com/reel/DEAoXLQTA7c/', 2000, 'Kong precision', []),
+        new Trick('https://www.instagram.com/reel/DGifuhLt7r5/', 3700, 'Dive kong', []),
+        new Trick('https://www.instagram.com/p/Ceb03iet0hq/', 4000, 'Kong precision', []),
+        new Trick('https://www.instagram.com/reel/C4F5AoXPzUW/', 2300, 'Reverse precision', []),
+        new Trick('https://www.instagram.com/p/C2IJ9JSNERR/', 3300, 'Reverse precision', []),
+        new Trick('https://www.instagram.com/reel/DHErqnPtA7L/', 2600, 'Double kong', []),
+        new Trick('https://www.instagram.com/reel/Csix1eEpWG9/', 2700, 'Running precision', []),
+        new Trick('https://www.instagram.com/reel/C7uQALSNgr9/', 3200, 'Dive frontflip', []),
+
         
     ];
 
     // Filling <datalist>
     const trickList = document.getElementById('trick-list');
+    guesses.sort((a,b) => a.name.localeCompare(b.name));
     guesses.forEach(guess => {
         trickList.innerHTML += '<option value="' + guess.name + '">';
     });
@@ -53,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
    
     function getRandomTrick() { // generates random trick
         const randomIndex = Math.floor(Math.random() * videos.length);
-        //return videos[videos.length - 1];
+        //return videos[videos.length - 1]; //for testing
         return videos[randomIndex];
     }
     const currentTrick = getRandomTrick();
@@ -108,8 +127,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 overlay.style.left = '0';
                 overlay.style.width = '100%';
                 overlay.style.height = '100%';
-                overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)'; // Transparent
-                overlay.style.cursor = 'pointer'; // Indicate that it’s clickable
+                overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+                overlay.style.cursor = 'pointer';
+                videoContainer.style.position = 'relative';
                 videoContainer.appendChild(overlay);
     
                 // Add the click event listener to the overlay

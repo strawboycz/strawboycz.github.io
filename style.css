@@ -24,6 +24,7 @@ h1 {
     max-width: 100%;
     height: auto;
     margin-top: 20px;
+    padding-right: 2px;
     border: 5px solid #2c3e50;
     border-radius: 8px;
     display: flex; /* Ensures the video container is centered */

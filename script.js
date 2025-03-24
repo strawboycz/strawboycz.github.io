@@ -97,13 +97,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const videoContainer = document.getElementById('video-container');
     const showButton = document.getElementById('show-video');
     const guessForm = document.getElementById('guess-form');
+    const howToPlay = document.getElementById('how-to-play');
+    const rulesCheckbox = document.getElementById('rules-checkbox');
+    let rulesRead = false;
+    const interval = setInterval(() => {
+        if (rulesCheckbox.checked) {
+            clearInterval(interval);
+            rulesRead = true;
+        }
+    }, 100);
 
     function hideVideoAfterDelay(delay) {
-        setTimeout(() => {
-            videoContainer.style.display = 'none';
-            videoContainer.innerHTML = "";
-            guessForm.style.display = "block";
-        }, delay);
+        if (videoContainer.querySelector('iframe')) {
+            setTimeout(() => {
+                videoContainer.style.display = 'none';
+                videoContainer.innerHTML = "";
+                guessForm.style.display = "block";
+            }, delay);
+        }
     }
 
     function startRound(url, msg) {
@@ -127,7 +138,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 overlay.style.left = '0';
                 overlay.style.width = '100%';
                 overlay.style.height = '75%';
-                overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+                overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+                overlay.style.backgroundImage = 'url(images/play-button.png)';
+                overlay.style.backgroundRepeat = 'no-repeat';
+                overlay.style.backgroundPosition = 'center';
+                overlay.style.backgroundSize = 'contain';
+                overlay.style.backdropFilter = 'blur(25px)';
                 overlay.style.cursor = 'pointer';
                 videoContainer.style.position = 'relative';
                 videoContainer.appendChild(overlay);
@@ -142,7 +158,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     showButton.addEventListener('click', () => {
-        startRound(currentTrick.url, '🎥 Doubleclick the video to start!');
+        if (rulesRead) {
+            startRound(currentTrick.url, '🎥 Doubleclick the video to start!');
+            howToPlay.style.display = 'none';
+        }
+        else{
+            alert('⚠ Read the rules first please');
+        }
     });
 
 

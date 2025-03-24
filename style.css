@@ -19,6 +19,39 @@ h1 {
     font-size: 3em;
 }
 
+/* How to play Styling */
+#how-to-play {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto; 
+    text-align: left; 
+}
+
+#how-to-play h3 {
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+#how-to-play p {
+    color: #333;
+    line-height: 1.6;
+}
+
+#how-to-play ul {
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+#how-to-play li {
+    margin-bottom: 5px; 
+    text-align: justify;
+}
+
+
 /* Video Styling */
 #video-container {
     max-width: 100%;
@@ -111,5 +144,8 @@ input[list="trick-list"] {
 
     input[type="text"], input[type="submit"], #show-video, #next-round {
         width: 100%;
+    }
+    #how-to-play {
+        width: 90%;
     }
 }

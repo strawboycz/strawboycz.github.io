@@ -3,20 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Parkourdle</title>
+  <title>PARKOURDLE</title>
   <link rel="stylesheet" href="style.css">
   <script async src="https://www.instagram.com/embed.js"></script>
   <script src="script.js" defer></script>
 </head>
 <body>
-  <h1>Parkourdle</h1>
+  <h1>PARKOURDLE</h1>
+  <div id="how-to-play">
+    <h3>How to play?</h3>
+    <p>
+      <ul>
+        <pre>
+💻 I reccomend playing on PC or a laptop for better experience
 
+💡 <strong>DOUBLECLICK</strong> on the play icon when you are ready to play!
+
+🎥 Parkour video will be played, it will dissapear just before the athlete takes off
+be ready, it will be quick!
+
+❓ Your goal is to then guess correctly which trick is the athlete going to do
+(Kong precise, Backflip, Cork, ...)
+
+✍ There is an existing dataset of answers, you can type into the text area, 
+but please select one of our premade trick names, any other input will not work
+
+👨‍🔬 Please mind the fact that this is a demo and the game is not perfect
+
+<input id="rules-checkbox" type="checkbox" name="rules-checkbox"> <label for="rules-checkbox">I read the rules above (enables playing the game)</label>
+
+        </pre>
+
+      </ul>
+     
+      
+      
+    </p>
+  </div>
   <!-- Kontejner pro dynamicky načtené Instagram video -->
   <div id="video-container" style="display: none;"></div>
       
-  <button id="show-video">Play!</button>
+  <button id="show-video">Start game!</button>
 
   <form id="guess-form" action="#" method="get" style="display: none;">
+    <h3>What jump comes next?</h3>
     <input id="trick-input" list="trick-list" placeholder="Take a guess!" autocomplete="off">
     <datalist id="trick-list"></datalist>
     <input type="submit" value="Guess">

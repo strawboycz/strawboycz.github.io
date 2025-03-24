@@ -5,23 +5,23 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    height: 100vh; /* Full height for vertical centering */
+    height: 100vh; 
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertically centers content */
-    align-items: center; /* Horizontally centers content */
+    justify-content: center; 
+    align-items: center; 
 }
 
 .top-nav {
     position: absolute;
     top: 10px;
-    left: 10px; /* Změníme right na left */
+    left: 10px; 
 }
 
 .top-nav a {
     color: #2c3e50;
     text-decoration: none;
-    margin-right: 20px; /* Změníme margin-left na margin-right */
+    margin-right: 20px; 
     font-weight: bold;
 }
 
@@ -77,9 +77,9 @@ h1 {
     padding-right: 2px;
     border: 5px solid #2c3e50;
     border-radius: 8px;
-    display: flex; /* Ensures the video container is centered */
-    justify-content: center; /* Centers content inside the video container */
-    align-items: center; /* Centers content inside the video container */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }
 
 /* Form Styling */
@@ -100,16 +100,16 @@ input[type="text"], input[type="submit"], #show-video, #next-round {
     font-size: 1.2em;
     border-radius: 5px;
     border: 1px solid #ccc;
-    width: 100%;  /* Set the button width to 100% of the form's width */
+    width: 100%;  
     margin-bottom: 10px;
-    height: 50px; /* Set the height to make inputs the same size */
+    height: 50px; 
 }
 
-/* Show Video Button & Next Round Button Styling */
+
 #show-video, #next-round {
-    width: auto; /* Prevent it from stretching across the full width */
-    max-width: 300px; /* Limit the button width */
-    margin-bottom: 20px; /* Add some space between buttons */
+    width: auto; 
+    max-width: 300px; 
+    margin-bottom: 20px; 
 }
 
 /* Submit Button and Show Video Button Styling */
@@ -124,7 +124,7 @@ input[type="submit"]:hover, #show-video:hover, #next-round:hover {
     background-color: #34495e;
 }
 
-/* Styling for the input in datalist */
+
 input[list="trick-list"] {
     padding: 10px;
     font-size: 1.2em;
@@ -132,7 +132,7 @@ input[list="trick-list"] {
     border: 1px solid #ccc;
     width: 80%;
     margin-bottom: 10px;
-    height: 50px; /* Set the height to make inputs the same size */
+    height: 50px; 
 }
 
 /* Feedback Styling */

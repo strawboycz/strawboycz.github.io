@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         new Guess('Dash precision', []),
         new Guess('Double kong', []),
         new Guess('Dive frontflip', []),
+        new Guess('Kong frontflip', []),
 
     ];
 
@@ -58,6 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
         new Trick('https://www.instagram.com/reel/DHErqnPtA7L/', 2600, 'Double kong', []),
         new Trick('https://www.instagram.com/reel/Csix1eEpWG9/', 2700, 'Running precision', []),
         new Trick('https://www.instagram.com/reel/C7uQALSNgr9/', 3200, 'Dive frontflip', []),
+        new Trick('https://www.instagram.com/reel/Cu4atlYAKDZ/', 3400, 'Kong precision', []),
+        new Trick('https://www.instagram.com/reel/DG5qbeDN60P/', 2300, 'Double kong', []),
+        new Trick('https://www.instagram.com/reel/DBmHeqtNiZ3/', 2900, 'Kong frontflip', []),
+        new Trick('https://www.instagram.com/reel/CwvU9fJNknJ/', 1800, 'Running precision', []),
+        new Trick('https://www.instagram.com/reel/C-QCnHTt34k/', 2300, 'Kong precision', []),
+        new Trick('https://www.instagram.com/reel/C3LcC48iD_o/', 1400, 'Dive frontflip', []),
+        new Trick('https://www.instagram.com/reel/CllJkgUjAEz/', 2900, 'Dive frontflip', []),
+        new Trick('https://www.instagram.com/reel/C53Mn-8N6NW/', 1200, 'Dive Kong', []),
 
         
     ];

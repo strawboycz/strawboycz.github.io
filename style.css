@@ -12,6 +12,23 @@ body {
     align-items: center; /* Horizontally centers content */
 }
 
+.top-nav {
+    position: absolute;
+    top: 10px;
+    left: 10px; /* Změníme right na left */
+}
+
+.top-nav a {
+    color: #2c3e50;
+    text-decoration: none;
+    margin-right: 20px; /* Změníme margin-left na margin-right */
+    font-weight: bold;
+}
+
+.top-nav a:hover {
+    text-decoration: underline;
+}
+
 /* Header Styling */
 h1 {
     color: #2c3e50;
